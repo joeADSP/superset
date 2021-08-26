@@ -1250,6 +1250,7 @@ def get_or_create_db(
             database_name=database_name, uuid=uuids.get(database_name)
         )
         db.session.add(database)
+        logger.info("Created database reference for %s", database_name)
 
     if database:
         database.set_sqlalchemy_uri(sqlalchemy_uri)
