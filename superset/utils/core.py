@@ -1253,8 +1253,10 @@ def get_or_create_db(
         logger.info("Created database reference for %s", database_name)
 
     if database:
+        logger.info("Updating database reference for %s", database_name)
         database.set_sqlalchemy_uri(sqlalchemy_uri)
         db.session.commit()
+        logger.info("Updated database reference for %s", database_name)
 
     return database
 
